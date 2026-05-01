@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold-50: #fdf8ef;
+  --color-gold-100: #f9edcf;
+  --color-gold-200: #f2d89e;
+  --color-gold-300: #e8bc5f;
+  --color-gold-400: #d4a44a;
+  --color-gold-500: #c9a96e;
+  --color-gold-600: #b8860b;
+  --color-gold-700: #9a6f0a;
+  --color-gold-800: #7d5a0e;
+  --color-gold-900: #664a12;
+  --color-dark-50: #f5f5f5;
+  --color-dark-100: #e0e0e0;
+  --color-dark-200: #b0b0b0;
+  --color-dark-300: #808080;
+  --color-dark-400: #505050;
+  --color-dark-500: #303030;
+  --color-dark-600: #1a1a1a;
+  --color-dark-700: #141414;
+  --color-dark-800: #0f0f0f;
+  --color-dark-900: #0a0a0a;
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #c9a96e33 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #c9a96e33;
+  border-radius: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+  overflow-x: hidden;
+}
+
+@media (max-width: 640px) {
+  input,
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(201, 169, 110, 0.1); }
+  50% { box-shadow: 0 0 40px rgba(201, 169, 110, 0.3); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #c9a96e 0%, #f2d89e 25%, #c9a96e 50%, #f2d89e 75%, #c9a96e 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+.glow-border {
+  animation: glow 3s ease-in-out infinite;
+}
+
+.product-card-gradient {
+  background: linear-gradient(135deg, #1a1a1a 0%, #141414 50%, #1a1a1a 100%);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, #0a0a0a 100%);
+}
+
+.gold-line {
+  background: linear-gradient(90deg, transparent, #c9a96e, transparent);
+}
